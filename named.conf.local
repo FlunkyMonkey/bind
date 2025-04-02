@@ -1,0 +1,66 @@
+// named.conf.local for BIND DNS Server
+// Created on: 2025-04-01
+
+// Forward zone for vgriz.com
+zone "vgriz.com" {
+    type master;
+    file "/etc/bind/zones/db.vgriz.com";
+    allow-transfer { none; };
+};
+
+// Forward zone for regulogix.com
+zone "regulogix.com" {
+    type master;
+    file "/etc/bind/zones/db.regulogix.com";
+    allow-transfer { none; };
+};
+
+// Forward zone for familycabin.io
+zone "familycabin.io" {
+    type master;
+    file "/etc/bind/zones/db.familycabin.io";
+    allow-transfer { none; };
+};
+
+// Reverse zones
+// IOT Network (10.1.x.x)
+zone "1.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zones/db.10.1";
+    allow-transfer { none; };
+};
+
+// VLAN 16 DMZ Network (10.16.1.x)
+zone "1.16.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zones/db.10.16.1";
+    allow-transfer { none; };
+};
+
+// Management Network (172.18.1.x)
+zone "1.18.172.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zones/db.172.18.1";
+    allow-transfer { none; };
+};
+
+// Secondary VM Network (172.18.5.x)
+zone "5.18.172.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zones/db.172.18.5";
+    allow-transfer { none; };
+};
+
+// VM Network (172.18.232.x)
+zone "232.18.172.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zones/db.172.18.232";
+    allow-transfer { none; };
+};
+
+// Home Network (192.168.4.x)
+zone "4.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zones/db.192.168.4";
+    allow-transfer { none; };
+};

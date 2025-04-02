@@ -1,0 +1,19 @@
+; BIND reverse zone file for 172.18.5.x (Secondary VM Network)
+; Created on: 2025-04-01
+
+$TTL    86400
+@       IN      SOA     DNS1.vgriz.com. admin.vgriz.com. (
+                        2025040101      ; Serial (YYYYMMDDNN)
+                        3600            ; Refresh (1 hour)
+                        1800            ; Retry (30 minutes)
+                        604800          ; Expire (1 week)
+                        86400 )         ; Minimum TTL (24 hours)
+
+; Name servers
+@       IN      NS      DNS1.vgriz.com.
+@       IN      NS      DNS2.vgriz.com.
+
+; Reverse mappings
+1       IN      PTR     VLAN185-SecVM.vgriz.com.
+10      IN      PTR     ntp.vgriz.com.
+; 10      IN      PTR     DNS2.vgriz.com.  ; Duplicate IP, using primary name

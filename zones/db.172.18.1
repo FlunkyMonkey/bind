@@ -1,0 +1,37 @@
+; BIND reverse zone file for 172.18.1.x (Management Network)
+; Created on: 2025-04-01
+
+$TTL    86400
+@       IN      SOA     DNS1.vgriz.com. admin.vgriz.com. (
+                        2025040101      ; Serial (YYYYMMDDNN)
+                        3600            ; Refresh (1 hour)
+                        1800            ; Retry (30 minutes)
+                        604800          ; Expire (1 week)
+                        86400 )         ; Minimum TTL (24 hours)
+
+; Name servers
+@       IN      NS      DNS1.vgriz.com.
+@       IN      NS      DNS2.vgriz.com.
+
+; Reverse mappings
+1       IN      PTR     firewalla.vgriz.com.
+3       IN      PTR     sunwap.vgriz.com.
+4       IN      PTR     denwap.vgriz.com.
+5       IN      PTR     basementwap.vgriz.com.
+6       IN      PTR     rancherwap.vgriz.com.
+7       IN      PTR     unifiswitch.vgriz.com.
+10      IN      PTR     prox1.vgriz.com.
+11      IN      PTR     mbipmi01mgmt.vgriz.com.
+12      IN      PTR     unifi.vgriz.com.
+13      IN      PTR     mikrotik.vgriz.com.
+20      IN      PTR     prox2.vgriz.com.
+28      IN      PTR     sdr.vgriz.com.
+30      IN      PTR     prox3.vgriz.com.
+38      IN      PTR     peakups.vgriz.com.
+; 38      IN      PTR     peakupsmgmt.vgriz.com.  ; Duplicate IP, using primary name
+39      IN      PTR     peakups02.vgriz.com.
+; 39      IN      PTR     peakups02mgmt.vgriz.com.  ; Duplicate IP, using primary name
+40      IN      PTR     prox4.vgriz.com.
+50      IN      PTR     prox5.vgriz.com.
+96      IN      PTR     TrueNAS01.vgriz.com.
+97      IN      PTR     TrueNAS02.vgriz.com.

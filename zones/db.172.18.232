@@ -1,0 +1,20 @@
+; BIND reverse zone file for 172.18.232.x (VM Network)
+; Created on: 2025-04-01
+
+$TTL    86400
+@       IN      SOA     DNS1.vgriz.com. admin.vgriz.com. (
+                        2025040101      ; Serial (YYYYMMDDNN)
+                        3600            ; Refresh (1 hour)
+                        1800            ; Retry (30 minutes)
+                        604800          ; Expire (1 week)
+                        86400 )         ; Minimum TTL (24 hours)
+
+; Name servers
+@       IN      NS      DNS1.vgriz.com.
+@       IN      NS      DNS2.vgriz.com.
+
+; Reverse mappings
+1       IN      PTR     vm-gateway.vgriz.com.
+10      IN      PTR     DNS1.vgriz.com.
+240     IN      PTR     minecraft.vgriz.com.
+245     IN      PTR     nms.vgriz.com.
