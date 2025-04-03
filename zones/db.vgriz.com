@@ -65,7 +65,6 @@ ntp                 IN      A       172.18.5.10
 gateway-vmdata-172-18-232-x  IN      A       172.18.232.1
 DNS1                IN      A       172.18.232.10
 ntp                 IN      A       172.18.232.10
-rmm                 IN      A       172.18.232.50
 minecraft           IN      A       172.18.232.240
 netdata             IN      A       172.18.232.245
 unifi               IN      A       172.18.232.251
